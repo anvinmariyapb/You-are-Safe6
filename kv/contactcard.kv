@@ -1,0 +1,26 @@
+<ContactCard>:
+    orientation: 'vertical'
+    padding: '6dp'
+    spacing: '4dp'
+    size_hint_y: None
+    height: '140dp'
+    size_hint_x: None
+    width: 300
+
+    canvas.before:
+        Color:
+            rgba: 0.9, 0.88, 0.97, 1
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10]
+
+    Button:
+        text: root.code
+        font_size: 18
+        size_hint_y: None
+        height: 50
+        background_normal: ''
+        background_color: 0.55, 0.4, 0.7, 1
+        color: 0,0,0
+        on_release: root.send_secret() if hasattr(root, 'send_secret') else None

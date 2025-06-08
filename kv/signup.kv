@@ -1,0 +1,87 @@
+<SignUpScreen>:
+    name: "signup"
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (0.9, 0.95, 1, 1)  # Light bluish background
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 20
+            padding: 30
+            size_hint: None, None
+            size: min(self.parent.width * 0.85, 400), min(self.parent.height * 0.85, 450)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 1, 0.95)
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+            Label:
+                text: "Sign Up"
+                font_size: 34
+                color: (0.1, 0.3, 0.6, 1)
+                size_hint_y: None
+                height: 40
+
+            TextInput:
+                id: username
+                hint_text: "Choose username"
+                size_hint_y: None
+                height: 45
+                foreground_color: (0, 0, 0, 1)
+                background_color: (0.88, 0.94, 1, 1)
+                cursor_color: (0, 0.3, 0.8, 1)
+                padding: [10, 10]
+
+            TextInput:
+                id: password
+                hint_text: "Choose password"
+                password: True
+                size_hint_y: None
+                height: 45
+                foreground_color: (0, 0, 0, 1)
+                background_color: (0.88, 0.94, 1, 1)
+                cursor_color: (0, 0.3, 0.8, 1)
+                padding: [10, 10]
+
+            TextInput:
+                id: email
+                hint_text: "Your email"
+                size_hint_y: None
+                height: 45
+                foreground_color: (0, 0, 0, 1)
+                background_color: (0.88, 0.94, 1, 1)
+                cursor_color: (0, 0.3, 0.8, 1)
+                padding: [10, 10]
+
+            
+            Button:
+                text: "Sign Up"
+                size_hint_y: None
+                height: 45
+                background_color: (0.2, 0.5, 1, 1)
+                color: (1, 1, 1, 1)
+                background_normal: ''
+                border: [20, 20, 20, 20]
+                on_release:
+                    root.signup_user(username.text, password.text, email.text)
+
+            Label:
+                id: signup_message
+                text: ""
+                font_size: 14
+                color: (0, 0.2, 0.6, 1)
+
+        GoBackButton:
+            size_hint: None, None
+            size: 120, 40
+            pos_hint: {"x": 0.02, "top": 0.98}
+            on_release:
+                root.manager.current = "login"

@@ -1,0 +1,63 @@
+<SidePanel>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 6    # Smaller spacing for tighter grouping
+    size_hint_x: None
+    width: 100
+
+    canvas.before:
+        Color:
+            rgba: 0.9, 0.85, 0.95, 0.99
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Button:
+        text: " Home"
+        background_normal: ''
+        background_color: 0.9, 0.85, 0.95, 0.99
+        color: 0, 0, 0, 1
+        font_size: 15
+        bold: True
+        size_hint_y: None
+        height: 40
+        on_press:
+            app.root.current = "home"
+
+    Button:
+        text: " Profile"
+        background_normal: ''
+        background_color: 0.9, 0.85, 0.95, 0.99
+        color: 0, 0, 0, 1
+        font_size: 15
+        bold: True
+        size_hint_y: None
+        height: 40
+        on_press:
+            app.root.current = "profile"
+
+    Button:
+        text: "Settings"
+        background_normal: ''
+        background_color: 0.9, 0.85, 0.95, 0.99
+        color: 0, 0, 0, 1
+        font_size: 15
+        bold: True
+        size_hint_y: None
+        height: 40
+        on_press:
+            app.root.current = "settings"
+
+    # Remove the extra space widget if you want no extra gap here
+
+    Button:
+        text: "Logout"
+        background_normal: ''
+        background_color: 0.9, 0.85, 0.95, 0.99
+        color: 0, 0, 0, 1
+        font_size: 15
+        bold: True
+        size_hint_y: None
+        height: 40
+        on_press:
+            app.root.current = "login"

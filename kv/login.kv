@@ -1,0 +1,93 @@
+<LoginScreen>:
+    name: "login"
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (0.96, 0.82, 0.96, 1)  # Light lavender
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "[i]You Are Safe[/i]"
+            markup: True
+            font_size: 36
+            bold: True
+            color: 0,0,0
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {"center_x": 0.5, "top": 0.95}
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 20
+            padding: 30
+            size_hint: 0.85, None  # Width scales 85% of parent, height fixed (flexible below)
+            height: min(root.height * 0.7, 400)  # max height 400 or 70% of screen height
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 1, 0.96)
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [25]
+
+            Label:
+                text: "Login"
+                font_size: 34
+                color: (0.4, 0.2, 0.6, 1)
+                size_hint_y: None
+                height: 40
+                bold: True
+
+            TextInput:
+                id: username
+                hint_text: "Username"
+                multiline: False
+                size_hint_y: None
+                height: 45
+                foreground_color: (0.2, 0.1, 0.3, 1)
+                background_color: (0.93, 0.91, 0.98, 1)
+                cursor_color: (0.5, 0.2, 0.7, 1)
+                padding: [10, 10]
+
+            TextInput:
+                id: password
+                hint_text: "Password"
+                password: True
+                multiline: False
+                size_hint_y: None
+                height: 45
+                foreground_color: (0.2, 0.1, 0.3, 1)
+                background_color: (0.93, 0.91, 0.98, 1)
+                cursor_color: (0.5, 0.2, 0.7, 1)
+                padding: [10, 10]
+
+            Label:
+                id: login_message
+                text: ""
+                color: (0.8, 0.1, 0.2, 1)
+                font_size: 14
+
+            Button:
+                text: "Sign In"
+                size_hint_y: None
+                height: 45
+                background_color: (0.6, 0.4, 0.8, 1)
+                color: (0,0,0)
+                background_normal: ''
+                border: [20, 20, 20, 20]
+                on_release:
+                    app.root.get_screen('login').login_user(username.text, password.text)
+
+            Button:
+                text: " Don’t have an account? Sign Up"
+                size_hint_y: None
+                height: 45
+                background_color: (0.5, 0.3, 0.7, 1)
+                color: (0,0,0)
+                background_normal: ''
+                border: [20, 20, 20, 20]
+                on_release:
+                    app.root.current = "signup"
+
+

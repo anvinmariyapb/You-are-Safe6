@@ -1,0 +1,201 @@
+<SettingsScreen>:
+    name: "settings"
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (0.9, 0.95, 1, 1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        # Header with GoBackButton and Label
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.9, None
+            height: 100
+            pos_hint: {"center_x": 0.5, "top": 0.98}
+            spacing: 8
+            padding: 10, 10
+
+            GoBackButton:
+                size_hint: None, None
+                size: 100, 40
+                background_color: (0.2, 0.5, 1, 1)
+                color: (1, 1, 1, 1)
+
+            Label:
+                text: "Emergency Contact Settings"
+                font_size: 28
+                bold: True
+                color: (0.1, 0.3, 0.6, 1)
+                size_hint_y: None
+                height: 40
+
+        ScrollView:
+            size_hint: 0.9, 0.8
+            pos_hint: {"center_x": 0.5, "y": 0.05}
+            do_scroll_x: False
+            do_scroll_y: True
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: 20
+                padding: 10
+                size_hint_y: None
+                height: self.minimum_height
+
+                # Contact 1
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint: None, None
+                    width: 360
+                    height: self.minimum_height
+                    pos_hint: {"center_x": 0.5}
+                    padding: 20
+                    spacing: 12
+                    canvas.before:
+                        Color:
+                            rgba: (1, 1, 1, 0.9)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [18]
+
+                    Label:
+                        text: "Contact 1"
+                        font_size: 18
+                        size_hint_y: None
+                        height: 30
+                        color: (0.1, 0.3, 0.6, 1)
+
+                    TextInput:
+                        id: contact1
+                        hint_text: "Enter Contact Number"
+                        multiline: False
+                        input_filter: 'int'
+                        size_hint_y: None
+                        height: 45
+                        padding: 10
+                        background_color: (0.88, 0.94, 1, 1)
+                        foreground_color: (0, 0, 0, 1)
+                        cursor_color: (0.1, 0.3, 0.6, 1)
+
+                    TextInput:
+                        id: code1
+                        hint_text: "Enter Secret Code"
+                        multiline: False
+                        size_hint_y: None
+                        height: 45
+                        padding: 10
+                        background_color: (0.88, 0.94, 1, 1)
+                        foreground_color: (0, 0, 0, 1)
+                        cursor_color: (0.1, 0.3, 0.6, 1)
+
+                # Contact 2
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint: None, None
+                    width: 360
+                    height: self.minimum_height
+                    pos_hint: {"center_x": 0.5}
+                    padding: 20
+                    spacing: 12
+                    canvas.before:
+                        Color:
+                            rgba: (1, 1, 1, 0.9)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [18]
+
+                    Label:
+                        text: "Contact 2"
+                        font_size: 18
+                        size_hint_y: None
+                        height: 30
+                        color: (0.1, 0.3, 0.6, 1)
+
+                    TextInput:
+                        id: contact2
+                        hint_text: "Enter Contact Number"
+                        multiline: False
+                        input_filter: 'int'
+                        size_hint_y: None
+                        height: 45
+                        padding: 10
+                        background_color: (0.88, 0.94, 1, 1)
+                        foreground_color: (0, 0, 0, 1)
+                        cursor_color: (0.1, 0.3, 0.6, 1)
+
+                    TextInput:
+                        id: code2
+                        hint_text: "Enter Secret Code"
+                        multiline: False
+                        size_hint_y: None
+                        height: 45
+                        padding: 10
+                        background_color: (0.88, 0.94, 1, 1)
+                        foreground_color: (0, 0, 0, 1)
+                        cursor_color: (0.1, 0.3, 0.6, 1)
+
+                # Contact 3
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint: None, None
+                    width: 360
+                    height: self.minimum_height
+                    pos_hint: {"center_x": 0.5}
+                    padding: 20
+                    spacing: 12
+                    canvas.before:
+                        Color:
+                            rgba: (1, 1, 1, 0.9)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [18]
+
+                    Label:
+                        text: "Contact 3"
+                        font_size: 18
+                        size_hint_y: None
+                        height: 30
+                        color: (0.1, 0.3, 0.6, 1)
+
+                    TextInput:
+                        id: contact3
+                        hint_text: "Enter Contact Number"
+                        multiline: False
+                        input_filter: 'int'
+                        size_hint_y: None
+                        height: 45
+                        padding: 10
+                        background_color: (0.88, 0.94, 1, 1)
+                        foreground_color: (0, 0, 0, 1)
+                        cursor_color: (0.1, 0.3, 0.6, 1)
+
+                    TextInput:
+                        id: code3
+                        hint_text: "Enter Secret Code"
+                        multiline: False
+                        size_hint_y: None
+                        height: 45
+                        padding: 10
+                        background_color: (0.88, 0.94, 1, 1)
+                        foreground_color: (0, 0, 0, 1)
+                        cursor_color: (0.1, 0.3, 0.6, 1)
+
+                Button:
+                    text: "Save Settings"
+                    font_size: 20
+                    bold: True
+                    size_hint: None, None
+                    size: 220, 55
+                    pos_hint: {"center_x": 0.5}
+                    background_normal: ''
+                    background_color: (0.2, 0.5, 1, 1)
+                    color: (1, 1, 1, 1)
+                    border: (20, 20, 20, 20)
+                    on_release:
+                        root.save_settings(contact1.text, code1.text, contact2.text, code2.text, contact3.text, code3.text)
